@@ -169,7 +169,7 @@
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "http://pastebin.com/raw.php?i=zH8L9Sjz",
+        scriptLink: "https://rawgit.com/Natedanp/basicBot/master/trnttwerkbot.js",
         cmdLink: "http://git.io/245Ppg",
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         chat: null,
