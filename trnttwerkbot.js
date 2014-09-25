@@ -788,7 +788,7 @@
         eventDjadvance: function (obj) {
             var lastplay = obj.lastPlay;
             if (typeof lastplay === 'undefined') return void (0);
-                    API.sendChat("/em " + lastplay.media.title + " | :ok_hand: " + lastplay.score.positive + " | :star: " + lastplay.score.grabs + " | :thumbsdown:  " + lastplay.score.negative + " |");
+                    API.sendChat("/em " + lastplay.media.title + " | :thumbsup: " + lastplay.score.positive + " | :star: " + lastplay.score.grabs + " | :thumbsdown:  " + lastplay.score.negative + " |");
             basicBot.room.roomstats.totalWoots += lastplay.score.positive;
             basicBot.room.roomstats.totalMehs += lastplay.score.negative;
             basicBot.room.roomstats.totalCurates += lastplay.score.grabs;
