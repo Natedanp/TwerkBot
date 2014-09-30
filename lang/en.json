@@ -8,8 +8,8 @@
     "online": "/me %%BOTNAME%% v%%VERSION%% online!",
 
 
-    "welcome": "/me %%NAME%% has joined for the first time. Welcome to TRNT!",
-    "welcomeback": "/me %%NAME%% has joined. Welcome back to TRNT!",
+    "welcome": "/me Hello, %%NAME%%. Welcome to TRNT!",
+    "welcomeback": "/me Hello, %%NAME%%. Welcome back to TRNT!",
     "songknown": "/me :repeat: This song has been played %%PLAYS%% time(s) in the last %%TIMETOTAL%%, last play was %%LASTTIME%% ago. :repeat:",
     "timelimit": "/me @%%NAME%%, your song is longer than %%MAXLENGTH%% minutes, you need permission to play longer songs.",
     "permissionownsong": "/me :up: @%%NAME%% has permission to play their own production!",
