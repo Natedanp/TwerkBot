@@ -216,7 +216,7 @@
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
-            website: null,
+            website: "www.trntrecords.com",
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
@@ -2869,9 +2869,9 @@ API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] ( . Y . )");
 }
  
-if(data.message.indexOf('!variety') === 0){
+if(data.message.indexOf('!Nate') === 0){
 API.moderateDeleteChat(data.cid);
-API.sendChat("Variety is the shit!");
+API.sendChat("Nate is the shit!");
 }
 });
 
