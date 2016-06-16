@@ -232,30 +232,30 @@
     };
 
     var botCreator = "Yemasthui";
-    var botMaintainer = "Benzi"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botMaintainer = "Nate"
+    var botCreatorIDs = ["3851534", "4367451"];
 
     var basicBot = {
         version: "2.8.17",
         status: false,
-        name: "basicBot",
+        name: "TwerkBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
-        cmdLink: "http://git.io/245Ppg",
+        scriptLink: "https://rawgit.com/Natedanp/basicBot/master/trnttwerkbot.js",
+        cmdLink: "https://git.io/vo0vg",
         chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "TwerkBot",
             language: "english",
             chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
-            scriptLink: "https://rawgit.com/basicBot/source/master/basicBot.js",
+            scriptLink: "https://rawgit.com/Natedanp/basicBot/master/trnttwerkbot.js",
             roomLock: false, // Requires an extension to re-load the script
-            startupCap: 1, // 1-200
+            startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
-            startupEmoji: false, // true or false
+            startupEmoji: true, // true or false
             autowoot: true,
             autoskip: false,
             smartSkip: true,
@@ -270,47 +270,47 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: false,
-            voteSkipLimit: 10,
-            historySkip: false,
+            voteSkip: true,
+            voteSkipLimit: 6,
+            historySkip: true,
             timeGuard: true,
-            maximumSongLength: 10,
+            maximumSongLength: 9,
             autodisable: true,
-            commandCooldown: 30,
+            commandCooldown: 20,
             usercommandsEnabled: true,
             thorCommand: false,
             thorCooldown: 10,
-            skipPosition: 3,
+            skipPosition: 1,
             skipReasons: [
-                ["theme", "This song does not fit the room theme. "],
-                ["op", "This song is on the OP list. "],
-                ["history", "This song is in the history. "],
-                ["mix", "You played a mix, which is against the rules. "],
-                ["sound", "The song you played had bad sound quality or no sound. "],
-                ["nsfw", "The song you contained was NSFW (image or sound). "],
-                ["unavailable", "The song you played was not available for some users. "]
+                ["theme", "Sorry! This song isn't Rap or Trap. Please read the room rules before playing again. "],
+                ["op", "Sorry! This song is on the OverPlayed list. http://goo.gl/EANOvG "],
+                ["history", "Sorry! This song was recently played. "],
+                ["mix", "Sorry! You played a mix, which is against our rules. Please read the room rules before playing again. "],
+                ["sound", "Sorry! This song had bad sound quality or no sound. "],
+                ["nsfw", "This song was NSFW (image or sound). "],
+                ["unavailable", "Sorry! This song was not available for some users. "]
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
-            motdEnabled: false,
-            motdInterval: 5,
-            motd: "Temporary Message of the Day",
+            motdEnabled: true,
+            motdInterval: 15,
+            motd: "TRNT Is back! Tell your friends, and get TRNT with us!",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
-            opLink: null,
-            rulesLink: null,
+            opLink: "http://goo.gl/EANOvG",
+            rulesLink: "http://goo.gl/8sClwg",
             themeLink: null,
-            fbLink: null,
-            youtubeLink: null,
-            website: null,
+            fbLink: "http://facebook.com/TRNTrecords",
+            youtubeLink: "http://bit.ly/TRNTyoutube",
+            website: "http://www.trntrecords.com/",
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/basicBot/custom/master/blacklists/NSFWlist.json",
-                OP: "https://rawgit.com/basicBot/custom/master/blacklists/OPlist.json",
+                OP: "https://rawgit.com/Natedanp/basicBot-customization/master/blacklists/TRNTOPlist.json",
                 BANNED: "https://rawgit.com/basicBot/custom/master/blacklists/BANNEDlist.json"
             }
         },
@@ -1291,7 +1291,7 @@
                 'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda'
             ],
             curses: [
-                'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka'
+                'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka', 'fag'
             ]
         },
         connectAPI: function () {
@@ -3087,7 +3087,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat('/me This bot was created by ' + botCreator + ', but is now maintained by ' + botMaintainer + ".");
+                        API.sendChat('/me This bot was created by ' + botCreator + ', and is maintained by our Manager, @' + botMaintainer + ".");
                     }
                 }
             },
@@ -3708,3 +3708,71 @@
 
     loadChat(basicBot.startup);
 }).call(this);
+
+API.on(API.CHAT, function(data){
+ 
+if(data.message.indexOf('!props') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] [!props] props to @"+ API.getDJ().username +". Nice play!");
+}
+ 
+if(data.message.indexOf('!twerk') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] Twerkin' dat ass!");
+}
+ 
+if(data.message.indexOf('!order a bowl') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] Toke up! :deciduous_tree::fire:");
+}
+ 
+if(data.message.indexOf('!order a beer') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] Cheers! :beers:");
+}
+ 
+if(data.message.indexOf('!order a burger') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] Here's your burger! :hamburger:");
+}
+ 
+if(data.message.indexOf('!order a cake') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] The cake is definitely a lie! :cake:");
+}
+ 
+if(data.message.indexOf('!sc') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] [!sc] TRNT Soundcloud: http://goo.gl/yElQTr");
+}
+
+if(data.message.indexOf('!twitter') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] [!twitter] TRNT Twitter: http://goo.gl/tZW0R8");
+}
+ 
+if(data.message.indexOf('!love') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] :purple_heart:");
+}
+ 
+if(data.message.indexOf('!tits') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("["+ data.un +"] ( . Y . )");
+}
+ 
+if(data.message.indexOf('!Nate') === 0){
+API.moderateDeleteChat(data.cid);
+API.sendChat("Nate is the shit!");
+}
+});
+
+API.on(API.CHAT, function(data){
+ 
+if(data.message.indexOf('!twit') === 0){
+API.moderateDeleteChat(data.cid);
+var room = API.getUsers();
+var userR = Math.floor(Math.random() * room.length);
+API.sendChat("@" + room[userR].username + " is a twit!");
+}
+});
