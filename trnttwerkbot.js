@@ -3716,7 +3716,7 @@ API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] [!props] props to @"+ API.getDJ().username +". Nice play!");
 }
  
-if(data.message.indexOf('!twerk') === 0){
+if(data.message.indexOf('!twerk') === 1){
 API.sendChat("["+ data.un +"] Twerkin' dat ass!");
 }
  
