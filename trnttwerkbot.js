@@ -236,7 +236,7 @@
     var botCreatorIDs = ["3851534", "4367451"];
 
     var basicBot = {
-        version: "2.8.17",
+        version: "2.9.9",
         status: false,
         name: "TwerkBot",
         loggedInID: null,
@@ -253,11 +253,11 @@
             chatLink: "https://rawgit.com/basicBot/source/master/lang/en.json",
             scriptLink: "https://rawgit.com/Natedanp/basicBot/master/trnttwerkbot.js",
             roomLock: false, // Requires an extension to re-load the script
-            startupCap: 200, // 1-200
+            startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: true, // true or false
             autowoot: true,
-            autoskip: false,
+            autoskip: true,
             smartSkip: true,
             cmdDeletion: false,
             maximumAfk: 120,
@@ -271,7 +271,7 @@
             cycleGuard: true,
             maximumCycletime: 10,
             voteSkip: true,
-            voteSkipLimit: 6,
+            voteSkipLimit: 3,
             historySkip: true,
             timeGuard: true,
             maximumSongLength: 9,
@@ -3717,60 +3717,53 @@ API.sendChat("["+ data.un +"] [!props] props to @"+ API.getDJ().username +". Nic
 }
  
 if(data.message.indexOf('!twerk') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] Twerkin' dat ass!");
 }
  
 if(data.message.indexOf('!order a bowl') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] Toke up! :deciduous_tree::fire:");
 }
  
 if(data.message.indexOf('!order a beer') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] Cheers! :beers:");
 }
  
 if(data.message.indexOf('!order a burger') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] Here's your burger! :hamburger:");
 }
  
 if(data.message.indexOf('!order a cake') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] The cake is definitely a lie! :cake:");
 }
  
 if(data.message.indexOf('!sc') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] [!sc] TRNT Soundcloud: http://goo.gl/yElQTr");
 }
 
 if(data.message.indexOf('!twitter') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] [!twitter] TRNT Twitter: http://goo.gl/tZW0R8");
 }
  
 if(data.message.indexOf('!love') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] :purple_heart:");
 }
  
 if(data.message.indexOf('!tits') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] ( . Y . )");
 }
  
 if(data.message.indexOf('!Nate') === 0){
-API.moderateDeleteChat(data.cid);
 API.sendChat("Nate is the shit!");
+}
+
+if(data.message.indexOf('!lilboat') === 0){
+API.sendChat("!gif lil boat");
 }
 });
 
 API.on(API.CHAT, function(data){
  
 if(data.message.indexOf('!twit') === 0){
-API.moderateDeleteChat(data.cid);
 var room = API.getUsers();
 var userR = Math.floor(Math.random() * room.length);
 API.sendChat("@" + room[userR].username + " is a twit!");
