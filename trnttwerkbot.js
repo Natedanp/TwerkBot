@@ -236,7 +236,7 @@
     var botCreatorIDs = ["3851534", "4367451"];
 
     var basicBot = {
-        version: "2.9.1.3",
+        version: "2.9.1.4",
         status: false,
         name: "TwerkBot",
         loggedInID: null,
