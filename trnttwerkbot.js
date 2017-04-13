@@ -3612,6 +3612,19 @@
                     }
                 }
             },
+            
+            nateCommand: {
+                command: 'nate',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat("Nate is the shit!");
+                    }
+                }
+            },
 
             whoisCommand: {
                 command: 'whois',
@@ -3716,7 +3729,7 @@ API.moderateDeleteChat(data.cid);
 API.sendChat("["+ data.un +"] [!props] props to @"+ API.getDJ().username +". Nice play!");
 }
  
-if(data.message.indexOf('!twerk') === 1){
+if(data.message.indexOf('!twerk') === 0){
 API.sendChat("["+ data.un +"] Twerkin' dat ass!");
 }
  
@@ -3752,7 +3765,7 @@ if(data.message.indexOf('!tits') === 0){
 API.sendChat("["+ data.un +"] ( . Y . )");
 }
  
-if(data.message.indexOf('!Nate') === 1){
+if(data.message.indexOf('!Natee') === 0){
 API.sendChat("Nate is the shit!");
 }
 
