@@ -3752,7 +3752,7 @@ if(data.message.indexOf('!tits') === 0){
 API.sendChat("["+ data.un +"] ( . Y . )");
 }
  
-if(data.message.indexOf('!Nate') === 0){
+if(data.message.indexOf('!Nate') === 1){
 API.sendChat("Nate is the shit!");
 }
 
